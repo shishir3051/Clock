@@ -6,12 +6,12 @@ document.getElementById("ampm").textContent = ampm;
 
 function showCurrentTime() {
     let date = new Date();
-    let hr = date.getHours();
-    let min = date.getMinutes();
-    let sec = date.getSeconds();
+    let hr = date.getHours().toString().padStart(2, '0');
+    let min = date.getMinutes().toString().padStart(2, "0");
+    let sec = date.getSeconds().toString().padStart(2, "0");
     const ampm = hr >= 12 ? "PM" : "AM";
 
-    hr = hr % 12;
+    hr = (hr % 12).toString().padStart(2, '0');
     hr = hr ? hr : 12;
 
     hour.textContent = hr;
